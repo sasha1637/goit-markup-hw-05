@@ -652,6 +652,9 @@ img {
 
 .modal-close-botton {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 8px;
   right: 8px;
   width: 30px;
@@ -660,7 +663,6 @@ img {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  padding: 0px;
 
 }
 .modal-icon-close {
@@ -670,5 +672,5 @@ img {
 }
 .modal-icon-close:hover,
 .modal-icon-close:hover{
-    fill: red;
+    fill: var(--accent-color);
 /* -------------------------------- End Modal Windows ------------------------------- */

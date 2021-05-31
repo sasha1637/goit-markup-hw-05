@@ -161,12 +161,13 @@ img {
 .current::after {
   position: absolute;
   bottom: 0;
+  left: 0;
   content: '';
   display: block;
   width: 100%;
   height: 4px;
   background-color: var(--accent-color);
-  border: 2px;
+  border-radius: 2px;
 }
 
 /* ------------------------------ End header ------------------------------ */
@@ -538,7 +539,9 @@ img {
   line-height: 1.39;
   padding: 6px 22px;
   box-shadow: none;
+  cursor: pointer;
   border: 0;
+  border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -629,7 +632,8 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 100;
 
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -649,28 +653,32 @@ img {
   height: 581px;
   background-color: var(--primary-white-color);
 }
-
+.modal-icon-close {
+  width: 18px;
+  height: 18px;
+}
 .modal-close-botton {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
   top: 8px;
   right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-botton:focus,
+.modal-close-botton:hover {
+  fill: var(--accent-color);
+  /* border-color: var(--accent-color); на макете не меняется цвет */
+}
 
-}
-.modal-icon-close {
-  width: 18px;
-  height: 18px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)  ;
-}
-.modal-icon-close:hover,
-.modal-icon-close:hover{
-    fill: var(--accent-color);
 /* -------------------------------- End Modal Windows ------------------------------- */

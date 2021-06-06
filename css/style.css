@@ -274,6 +274,16 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.visually-hidden-checkbox {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
 /* ------------------------------ End Advantage ----------------------------- */
 
 /* -------------------------------- Services -------------------------------- */
@@ -486,7 +496,8 @@ img {
   color: var(--accent-color);
 }
 /* Социальные ссылки */
-.get-in {
+.get-in,
+.subscribe-title {
   margin-bottom: 22px;
   text-transform: uppercase;
   font-weight: bold;
@@ -515,6 +526,76 @@ img {
 .footer .social-list-link:hover,
 .footer .social-list-link:focus {
   background-color: var(--accent-color);
+}
+/* Form-subscribe */
+.form-subscribe {
+  display: block;
+  margin-left: 93px;
+}
+.conteiner-subscribe {
+  display: flex;
+}
+.form-subscribe-input {
+  display: flex;
+  width: 358px;
+  height: 50px;
+  padding: 15px 2px 15px 16px;
+  color: var(--primary-white-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  margin-right: 12px;
+  font-size: 16px;
+  line-height: 1.25;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-subscribe-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+.subscribe-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subscribe-submit-icon {
+  display: flex;
+  align-items: center;
+}
+.submit-icon {
+  display: block;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+.form-subscribe-input:hover,
+.form-subscribe-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.subscribe-form-button:focus,
+.subscribe-form-button:hover {
+  background-color: rgb(24, 140, 232);
+  border-color: rgb(24, 140, 232);
 }
 
 /* -------------------------------- Portfolio ------------------------------- */
@@ -651,6 +732,9 @@ img {
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   background-color: var(--primary-white-color);
 }
 .modal-icon-close {
@@ -679,6 +763,140 @@ img {
 .modal-close-botton:hover {
   fill: var(--accent-color);
   /* border-color: var(--accent-color); на макете не меняется цвет */
+}
+.modal-header {
+  padding-top: 40px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  color: var(--title-text-color);
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px 20px 40px;
+}
+.modal-form-field {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+.modal-form-input-wrapper {
+  position: relative;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.modal-form-input {
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 40px;
+  cursor: pointer;
+}
+.form-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+}
+.modal-form-comment {
+  margin-top: 4px;
+  width: 100%;
+  resize: none;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--title-text-color);
+}
+.modal-form-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.modal-form-input:focus + .form-input-icon {
+  fill: var(--accent-color);
+}
+.modal-form-input:focus,
+.modal-form-comment:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+/* Чекбокс */
+.modal-form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.modal-form-checkbox-policy {
+  display: flex;
+}
+.form-icon-checkbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  border: 2px solid rgba(33, 33, 33, 1);
+  border-radius: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-checkbox {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+}
+.modal-form-checkbox:checked + .form-icon-checkbox {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.modal-form-checkbox:focus + .form-icon-checkbox {
+  border-color: var(--accent-color);
+}
+
+.modal-form-policy-title {
+  line-height: 1.7;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+/* kk */
+
+.modal-form-button {
+  align-self: center;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding: 10px 55px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 30px;
+}
+.modal-form-button:focus,
+.modal-form-button:hover {
+  background-color: rgb(24, 140, 232);
+  border-color: rgb(24, 140, 232);
 }
 
 /* -------------------------------- End Modal Windows ------------------------------- */
